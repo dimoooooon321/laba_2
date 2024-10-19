@@ -223,14 +223,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.pushButton_6, 1, 2, 1, 1)
 
-        self.pushButton_X = QPushButton(self.centralwidget)
-        self.pushButton_X.setObjectName(u"pushButton_X")
-        sizePolicy4.setHeightForWidth(self.pushButton_X.sizePolicy().hasHeightForWidth())
-        self.pushButton_X.setSizePolicy(sizePolicy4)
-        self.pushButton_X.setFont(font3)
-        self.pushButton_X.setStyleSheet(u"background-color: rgb(224, 230, 228);")
+        self.pushButton_mul = QPushButton(self.centralwidget)
+        self.pushButton_mul.setObjectName(u"pushButton_mul")
+        sizePolicy4.setHeightForWidth(self.pushButton_mul.sizePolicy().hasHeightForWidth())
+        self.pushButton_mul.setSizePolicy(sizePolicy4)
+        self.pushButton_mul.setFont(font3)
+        self.pushButton_mul.setStyleSheet(u"background-color: rgb(224, 230, 228);")
 
-        self.gridLayout.addWidget(self.pushButton_X, 1, 3, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_mul, 1, 3, 1, 1)
 
         self.pushButton_mod = QPushButton(self.centralwidget)
         self.pushButton_mod.setObjectName(u"pushButton_mod")
@@ -307,14 +307,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.pushButton_0, 3, 0, 1, 1)
 
-        self.pushButton_comma = QPushButton(self.centralwidget)
-        self.pushButton_comma.setObjectName(u"pushButton_comma")
-        sizePolicy4.setHeightForWidth(self.pushButton_comma.sizePolicy().hasHeightForWidth())
-        self.pushButton_comma.setSizePolicy(sizePolicy4)
-        self.pushButton_comma.setFont(font3)
-        self.pushButton_comma.setStyleSheet(u"background-color: rgb(224, 230, 228);")
+        self.pushButton_point = QPushButton(self.centralwidget)
+        self.pushButton_point.setObjectName(u"pushButton_point")
+        sizePolicy4.setHeightForWidth(self.pushButton_point.sizePolicy().hasHeightForWidth())
+        self.pushButton_point.setSizePolicy(sizePolicy4)
+        self.pushButton_point.setFont(font3)
+        self.pushButton_point.setStyleSheet(u"background-color: rgb(224, 230, 228);")
 
-        self.gridLayout.addWidget(self.pushButton_comma, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_point, 3, 1, 1, 1)
 
         self.pushButton_equals = QPushButton(self.centralwidget)
         self.pushButton_equals.setObjectName(u"pushButton_equals")
@@ -478,7 +478,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_clear.clicked.connect(self.lineEdit.clear)
+
         self.pushButton_del.clicked.connect(self.lineEdit.undo)
 
         self.pushButton_7.setDefault(False)
@@ -499,7 +499,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.lineEdit.setWhatsThis(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><br/></p></body></html>", None))
 #endif // QT_CONFIG(whatsthis)
-        self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"7567765", None))
+        self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"1", None))
 #if QT_CONFIG(shortcut)
         self.pushButton.setShortcut(QCoreApplication.translate("MainWindow", u"Shift+Up", None))
@@ -539,9 +539,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.pushButton_6.setShortcut(QCoreApplication.translate("MainWindow", u"6", None))
 #endif // QT_CONFIG(shortcut)
-        self.pushButton_X.setText(QCoreApplication.translate("MainWindow", u"x", None))
+        self.pushButton_mul.setText(QCoreApplication.translate("MainWindow", u"x", None))
 #if QT_CONFIG(shortcut)
-        self.pushButton_X.setShortcut(QCoreApplication.translate("MainWindow", u"*", None))
+        self.pushButton_mul.setShortcut(QCoreApplication.translate("MainWindow", u"*", None))
 #endif // QT_CONFIG(shortcut)
         self.pushButton_mod.setText(QCoreApplication.translate("MainWindow", u"|    |", None))
         self.pushButton_power.setText(QCoreApplication.translate("MainWindow", u"^\u2610", None))
@@ -566,9 +566,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.pushButton_0.setShortcut(QCoreApplication.translate("MainWindow", u"0", None))
 #endif // QT_CONFIG(shortcut)
-        self.pushButton_comma.setText(QCoreApplication.translate("MainWindow", u",", None))
+        self.pushButton_point.setText(QCoreApplication.translate("MainWindow", u",", None))
 #if QT_CONFIG(shortcut)
-        self.pushButton_comma.setShortcut(QCoreApplication.translate("MainWindow", u".", None))
+        self.pushButton_point.setShortcut(QCoreApplication.translate("MainWindow", u".", None))
 #endif // QT_CONFIG(shortcut)
         self.pushButton_equals.setText(QCoreApplication.translate("MainWindow", u"=", None))
 #if QT_CONFIG(shortcut)

@@ -32,7 +32,7 @@
    <string>Calculator</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="files.qrc">
+   <iconset>
     <normaloff>:/icons/F:/ЗАГРУЗКИ/calculate_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/F:/ЗАГРУЗКИ/calculate_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</iconset>
   </property>
   <property name="styleSheet">
@@ -486,7 +486,7 @@ border-top-color: rgb(232, 231, 235);
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QPushButton" name="pushButton_X">
+       <widget class="QPushButton" name="pushButton_mul">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>

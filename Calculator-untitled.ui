@@ -152,7 +152,7 @@ border-top-color: rgb(232, 231, 235);
        <number>2</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_negate">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -199,7 +199,7 @@ border-top-color: rgb(232, 231, 235);
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_del">
+       <widget class="QPushButton" name="pushButton_backspace">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>
@@ -1179,7 +1179,7 @@ border-top-color: rgb(232, 231, 235);
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_del</sender>
+   <sender>pushButton_backspace</sender>
    <signal>clicked()</signal>
    <receiver>lineEdit</receiver>
    <slot>undo()</slot>

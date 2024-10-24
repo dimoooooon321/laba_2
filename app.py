@@ -1,6 +1,13 @@
 import sys
+import cmath
+import math
+
+PI = math.pi
+E = math.e
+
+
 from typing import Union, Optional
-from operator import add, sub, mul, truediv
+from operator import add, sub, mul, truediv, abs, pow
 
 from PySide6.QtWidgets import QApplication, QMainWindow
 
@@ -10,7 +17,10 @@ operations = {
         '+': add,
         '-': sub,
         '×': mul,
-        '/': truediv
+        '/': truediv,
+        'mod': abs,
+        '^': pow,
+        '\u221a': lambda x: math.sqrt(x)
 }
 
 error_zero_div = 'Division by zero'
@@ -44,14 +54,23 @@ class Calculator(QMainWindow):
         self.ui.pushButton_point.clicked.connect(self.add_point)
         self.ui.pushButton_negate.clicked.connect(self.negate)
         self.ui.pushButton_backspace.clicked.connect(self.backspace)
+        self.ui.pushButton_bracket_opening.clicked.connect(self.add_bracket_opening)
+        self.ui.pushButton_bracket_closing.clicked.connect(self.add_bracket_closing)
+
     #математика
         self.ui.pushButton_equals.clicked.connect(self.calculate)
         self.ui.pushButton_plus.clicked.connect(self.math_operation)
         self.ui.pushButton_minus.clicked.connect(self.math_operation)
         self.ui.pushButton_mul.clicked.connect(self.math_operation)
         self.ui.pushButton_divivde.clicked.connect(self.math_operation)
+        self.ui.pushButton_power.clicked.connect(self.math_operation)
+        self.ui.pushButton_mod.clicked.connect(self.math_operation)
+        self.ui.pushButton_percent.clicked.connect(self.add_percent)
+        self.ui.pushButton_sqrt.clicked.connect(self.math_operation)
 
-
+    #константы
+        self.ui.pushButton_E.clicked.connect(self.add_digit)
+        self.ui.pushButton_PI.clicked.connect(self.add_digit)
 
     def add_digit(self,btn_text: str) -> None:
         self.remove_error()
@@ -59,7 +78,9 @@ class Calculator(QMainWindow):
         btn = self.sender()
 
         digit_buttons = ('pushButton_0', 'pushButton_1', 'pushButton_2', 'pushButton_3', 'pushButton_4', 'pushButton_5',
-                         'pushButton_6', 'pushButton_7', 'pushButton_8', 'pushButton_9' )
+                         'pushButton_6', 'pushButton_7', 'pushButton_8', 'pushButton_9', 'pushButton_E', 'pushButton_PI',
+                         'pushButton_bracket1', 'pushButton_bracket2', 'pushButton_sqrt', 'pushButton_mod', 'pushButton_percent',
+                         'pushButton_sqrt', 'pushButton_power')
 
         if btn.objectName() in digit_buttons:
             if self.entry.text() == '0':
@@ -71,6 +92,15 @@ class Calculator(QMainWindow):
         self.clear_temp_if_equality()
         if '.' not in self.entry.text():
             self.entry.setText(self.entry.text() + '.')
+
+    def add_bracket_opening(self) -> None:
+        self.entry.setText(self.entry.text() + '(')
+
+    def add_bracket_closing(self) -> None:
+        self.entry.setText(self.entry.text() + ')')
+
+    def add_percent(self) -> None:
+        self.entry.setText(self.entry.text() + '%')
 
     def negate(self):
         self.clear_temp_if_equality()
@@ -156,6 +186,7 @@ class Calculator(QMainWindow):
                     self.show_error(error_undefined)
                 else:
                     self.show_error(error_zero_div)
+
     def math_operation(self) -> None:
         temp = self.temp.text()
         btn = self.sender()
